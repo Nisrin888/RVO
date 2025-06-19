@@ -492,18 +492,57 @@ section:nth-child(even) {
   background: linear-gradient(135deg, rgba(127, 0, 255, 0.1) 0%, rgba(0, 240, 255, 0.1) 100%);
 }
 
-/* TLDraw Iframe Dark Mode Styling */
-.workflow-iframe {
-  background: var(--color-secondary);
-  border: 1px solid rgba(127, 0, 255, 0.3);
-  filter: invert(0.9) hue-rotate(180deg);
-  border-radius: 0.5rem;
+/* Workflow Complete Section */
+.workflow-complete {
+  background: linear-gradient(180deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.02) 50%, var(--color-secondary) 100%);
 }
 
-.workflow-iframe-container {
-  background: var(--color-secondary);
-  border: 1px solid rgba(127, 0, 255, 0.3);
-  box-shadow: 0 0 20px rgba(127, 0, 255, 0.2);
+.workflow-section {
+  position: relative;
+}
+
+.pipeline-card {
+  transition: all 0.3s ease;
+}
+
+.pipeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.pipeline-card img {
+  transition: all 0.3s ease;
+}
+
+.pipeline-card:hover img {
+  box-shadow: 0 20px 40px rgba(127, 0, 255, 0.3);
+  border-color: var(--color-accent-1) !important;
+}
+
+.feature-point {
+  padding: 1.5rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(127, 0, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.feature-point:hover {
+  background: rgba(127, 0, 255, 0.1);
+  border-color: var(--color-accent-1);
+  transform: translateY(-3px);
+}
+
+.follow-up-feature {
+  padding: 2rem;
+  background: rgba(30, 30, 30, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(127, 0, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.follow-up-feature:hover {
+  background: rgba(127, 0, 255, 0.1);
+  border-color: var(--color-accent-1);
 }
 
 /* Mobile Menu Button */
