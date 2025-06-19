@@ -176,83 +176,89 @@
         <div class="container mx-auto px-6">
             <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">How RVO Transforms Your Workflow</h2>
             
-            <!-- Dual Pipeline Automation -->
-            <div class="workflow-section mb-20">
-                <h3 class="text-3xl font-bold text-center mb-8 text-accent-1">Automated Dual Pipeline Management</h3>
-                <p class="text-xl text-center text-muted mb-12 max-w-3xl mx-auto">
-                    We automate both client and candidate acquisition pipelines simultaneously, doubling your efficiency
-                </p>
-                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                    <div class="pipeline-card">
-                        <img src="workflow/client_pipline.png" alt="Client Pipeline Automation" class="w-full h-auto rounded-lg shadow-lg border border-primary/30">
-                        <h4 class="text-xl font-bold mt-4 text-center">Client Pipeline</h4>
-                        <p class="text-center text-muted mt-2">Automated lead capture, qualification, and engagement</p>
-                    </div>
-                    <div class="pipeline-card">
-                        <img src="workflow/candidate_pipeline.png" alt="Candidate Pipeline Automation" class="w-full h-auto rounded-lg shadow-lg border border-primary/30">
-                        <h4 class="text-xl font-bold mt-4 text-center">Candidate Pipeline</h4>
-                        <p class="text-center text-muted mt-2">Smart sourcing, screening, and matching at scale</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- AI Co-Pilot Section -->
-            <div class="workflow-section mb-20">
-                <h3 class="text-3xl font-bold text-center mb-8 text-accent-1">AI Co-Pilot for Smart Assessment</h3>
-                <p class="text-xl text-center text-muted mb-12 max-w-3xl mx-auto">
-                    Our AI assistant helps recruiters make better decisions faster with intelligent candidate assessment
-                </p>
-                <div class="max-w-4xl mx-auto">
-                    <img src="workflow/candidate_assessment_co-pilot.png" alt="AI-Powered Candidate Assessment" class="w-full h-auto rounded-lg shadow-lg border border-primary/30">
-                    <div class="grid md:grid-cols-3 gap-6 mt-8">
-                        <div class="feature-point text-center">
-                            <div class="text-3xl mb-2">🤖</div>
-                            <h5 class="font-bold">Smart Ranking</h5>
-                            <p class="text-sm text-muted">AI analyzes and ranks candidates based on requirements</p>
+            <!-- Zigzag Story Layout -->
+            <div class="workflow-story max-w-7xl mx-auto">
+                
+                <!-- Client Pipeline - Left Aligned -->
+                <div class="workflow-row workflow-left mb-16">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="workflow-image-container">
+                            <img src="workflow/client_pipline.png" alt="Client Pipeline Automation" class="workflow-story-image">
                         </div>
-                        <div class="feature-point text-center">
-                            <div class="text-3xl mb-2">📊</div>
-                            <h5 class="font-bold">Skill Matching</h5>
-                            <p class="text-sm text-muted">Deep analysis of skills and experience alignment</p>
-                        </div>
-                        <div class="feature-point text-center">
-                            <div class="text-3xl mb-2">🎯</div>
-                            <h5 class="font-bold">Predictive Success</h5>
-                            <p class="text-sm text-muted">Predicts candidate success probability</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Follow-up System -->
-            <div class="workflow-section">
-                <h3 class="text-3xl font-bold text-center mb-8 text-accent-1">Never Miss a Follow-Up</h3>
-                <p class="text-xl text-center text-muted mb-12 max-w-3xl mx-auto">
-                    Automated follow-up system ensures you never lose a client or candidate due to poor communication
-                </p>
-                <div class="max-w-4xl mx-auto">
-                    <img src="workflow/client-candiate_followup_pipeline.png" alt="Automated Follow-up System" class="w-full h-auto rounded-lg shadow-lg border border-primary/30">
-                    <div class="grid md:grid-cols-2 gap-8 mt-8">
-                        <div class="follow-up-feature">
-                            <h5 class="font-bold text-lg mb-2">Client Follow-ups</h5>
+                        <div class="workflow-content">
+                            <h3 class="text-3xl font-bold mb-4 text-accent-1">Client Pipeline Automation</h3>
+                            <p class="text-lg text-muted mb-4">
+                                Transform your client acquisition with intelligent automation. From initial contact to signed contracts, every touchpoint is optimized.
+                            </p>
                             <ul class="space-y-2 text-muted">
-                                <li>• Automated check-ins after submissions</li>
-                                <li>• Interview feedback reminders</li>
-                                <li>• Contract status updates</li>
-                                <li>• Relationship nurturing campaigns</li>
-                            </ul>
-                        </div>
-                        <div class="follow-up-feature">
-                            <h5 class="font-bold text-lg mb-2">Candidate Follow-ups</h5>
-                            <ul class="space-y-2 text-muted">
-                                <li>• Application status updates</li>
-                                <li>• Interview preparation reminders</li>
-                                <li>• Feedback collection automation</li>
-                                <li>• Placement check-ins</li>
+                                <li>✓ Automated lead capture from multiple sources</li>
+                                <li>✓ Smart qualification and scoring</li>
+                                <li>✓ Personalized engagement sequences</li>
                             </ul>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Candidate Pipeline - Right Aligned -->
+                <div class="workflow-row workflow-right mb-16">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="workflow-content order-2 md:order-1">
+                            <h3 class="text-3xl font-bold mb-4 text-accent-1">Candidate Pipeline Automation</h3>
+                            <p class="text-lg text-muted mb-4">
+                                Source and engage top talent at scale. Our system identifies, screens, and nurtures candidates automatically.
+                            </p>
+                            <ul class="space-y-2 text-muted">
+                                <li>✓ Multi-channel candidate sourcing</li>
+                                <li>✓ Automated screening and ranking</li>
+                                <li>✓ Intelligent matching algorithms</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-image-container order-1 md:order-2">
+                            <img src="workflow/candidate_pipeline.png" alt="Candidate Pipeline Automation" class="workflow-story-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- AI Assessment - Left Aligned -->
+                <div class="workflow-row workflow-left mb-16">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="workflow-image-container">
+                            <img src="workflow/candidate_assessment_co-pilot.png" alt="AI-Powered Assessment" class="workflow-story-image">
+                        </div>
+                        <div class="workflow-content">
+                            <h3 class="text-3xl font-bold mb-4 text-accent-1">AI-Powered Assessment Co-Pilot</h3>
+                            <p class="text-lg text-muted mb-4">
+                                Your intelligent assistant that helps make better hiring decisions. Analyzes candidates deeply and provides actionable insights.
+                            </p>
+                            <ul class="space-y-2 text-muted">
+                                <li>✓ Deep skill and experience analysis</li>
+                                <li>✓ Cultural fit predictions</li>
+                                <li>✓ Success probability scoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Follow-up System - Right Aligned -->
+                <div class="workflow-row workflow-right">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div class="workflow-content order-2 md:order-1">
+                            <h3 class="text-3xl font-bold mb-4 text-accent-1">Never Miss a Follow-Up</h3>
+                            <p class="text-lg text-muted mb-4">
+                                Automated follow-up sequences ensure perfect communication timing. Keep clients engaged and candidates warm throughout the process.
+                            </p>
+                            <ul class="space-y-2 text-muted">
+                                <li>✓ Automated status updates</li>
+                                <li>✓ Intelligent reminder systems</li>
+                                <li>✓ Relationship nurturing campaigns</li>
+                            </ul>
+                        </div>
+                        <div class="workflow-image-container order-1 md:order-2">
+                            <img src="workflow/client-candiate_followup_pipeline.png" alt="Automated Follow-ups" class="workflow-story-image">
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </section>

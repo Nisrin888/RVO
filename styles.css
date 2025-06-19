@@ -492,57 +492,107 @@ section:nth-child(even) {
   background: linear-gradient(135deg, rgba(127, 0, 255, 0.1) 0%, rgba(0, 240, 255, 0.1) 100%);
 }
 
-/* Workflow Complete Section */
+/* Workflow Complete Section - Zigzag Story Layout */
 .workflow-complete {
   background: linear-gradient(180deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.02) 50%, var(--color-secondary) 100%);
 }
 
-.workflow-section {
+.workflow-story {
   position: relative;
 }
 
-.pipeline-card {
+.workflow-row {
+  position: relative;
+  overflow: visible;
+}
+
+/* Add subtle connection lines between sections */
+.workflow-row:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  width: 2px;
+  height: 3rem;
+  background: linear-gradient(180deg, var(--color-accent-1), transparent);
+  opacity: 0.3;
+}
+
+.workflow-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.workflow-story-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+  border: 2px solid rgba(127, 0, 255, 0.3);
   transition: all 0.3s ease;
 }
 
-.pipeline-card:hover {
-  transform: translateY(-5px);
-}
-
-.pipeline-card img {
-  transition: all 0.3s ease;
-}
-
-.pipeline-card:hover img {
+.workflow-image-container:hover .workflow-story-image {
+  border-color: var(--color-accent-1);
   box-shadow: 0 20px 40px rgba(127, 0, 255, 0.3);
-  border-color: var(--color-accent-1) !important;
+  transform: scale(1.02);
 }
 
-.feature-point {
-  padding: 1.5rem;
-  background: rgba(30, 30, 30, 0.5);
-  border-radius: 0.5rem;
-  border: 1px solid rgba(127, 0, 255, 0.2);
-  transition: all 0.3s ease;
-}
-
-.feature-point:hover {
-  background: rgba(127, 0, 255, 0.1);
-  border-color: var(--color-accent-1);
-  transform: translateY(-3px);
-}
-
-.follow-up-feature {
+.workflow-content {
   padding: 2rem;
-  background: rgba(30, 30, 30, 0.5);
-  border-radius: 0.5rem;
-  border: 1px solid rgba(127, 0, 255, 0.2);
-  transition: all 0.3s ease;
 }
 
-.follow-up-feature:hover {
-  background: rgba(127, 0, 255, 0.1);
-  border-color: var(--color-accent-1);
+/* Add subtle animations on scroll */
+.workflow-left .workflow-image-container {
+  animation: slideInLeft 0.8s ease-out;
+}
+
+.workflow-right .workflow-image-container {
+  animation: slideInRight 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Mobile workflow adjustments */
+@media (max-width: 768px) {
+  .workflow-content {
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .workflow-row {
+    margin-bottom: 3rem !important;
+  }
+  
+  .workflow-row::after {
+    display: none;
+  }
+  
+  .workflow-left .workflow-image-container,
+  .workflow-right .workflow-image-container {
+    animation: none;
+  }
 }
 
 /* Mobile Menu Button */
