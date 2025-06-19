@@ -438,6 +438,15 @@ header nav a:hover {
     margin: 0;
     width: 100%;
   }
+  
+  /* Reduce spacing between tech stack and modules sections */
+  .tool-integration {
+    padding-bottom: 3rem;
+  }
+  
+  .modules {
+    padding-top: 3rem;
+  }
 }
 
 /* Scroll Progress Bar */
