@@ -44,6 +44,51 @@ document.addEventListener('DOMContentLoaded', () => {
             mobileMenu.classList.add('hidden');
         });
     });
+    
+    // Image Modal Functionality
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.querySelector('.close-modal');
+    
+    // Get all workflow images
+    const workflowImages = document.querySelectorAll('.workflow-story-image');
+    
+    // Add click event to each workflow image
+    workflowImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
+            modalImg.src = this.src;
+            captionText.innerHTML = this.alt;
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        });
+    });
+    
+    // Close modal when clicking the X
+    closeBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside the image
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
+    });
+    
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+        }, 300);
+    }
 });
 
 // Scroll to top function for logo click
@@ -376,3 +421,4 @@ document.querySelectorAll('section').forEach(section => {
     section.style.transition = 'all 0.8s ease';
     observer.observe(section);
 });
+
