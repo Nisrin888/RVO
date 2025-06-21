@@ -106,6 +106,51 @@ header nav a:hover {
   font-weight: 900;
 }
 
+/* Logo text mobile optimization */
+.logo-text-container {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo-text {
+  display: inline;
+  white-space: nowrap;
+}
+
+.word-recruitment,
+.word-velocity,
+.word-os {
+  display: inline;
+  margin-right: 0.25rem;
+}
+
+.word-os {
+  margin-right: 0;
+}
+
+/* Mobile specific logo styles */
+@media (max-width: 768px) {
+  .logo-text {
+    white-space: nowrap !important;
+  }
+  
+  .word-recruitment,
+  .word-velocity {
+    margin-right: 0.2rem;
+  }
+  
+  .logo-text-container {
+    max-width: calc(100vw - 120px); /* Account for logo and menu button */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 380px) {
+  .logo-text-container {
+    max-width: calc(100vw - 100px);
+  }
+}
+
 /* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.05) 50%, var(--color-secondary) 100%);

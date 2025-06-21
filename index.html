@@ -33,10 +33,10 @@
     <header class="fixed top-0 left-0 right-0 z-50 bg-secondary/95 backdrop-blur-md">
         <div class="container mx-auto px-6">
             <nav class="flex items-center justify-between py-4">
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="scrollToTop()">
-                    <img src="logo.png" alt="RVO Logo" class="h-10 w-auto">
+                <div class="flex items-center space-x-2 cursor-pointer" onclick="scrollToTop()">
+                    <img src="logo.png" alt="RVO Logo" class="h-8 sm:h-10 w-auto">
                     <div class="logo-text-container">
-                        <span class="logo-text text-xl md:text-2xl font-bold" style="font-family: 'Orbitron', monospace;">
+                        <span class="logo-text text-sm sm:text-xl md:text-2xl font-bold whitespace-nowrap" style="font-family: 'Orbitron', monospace;">
                             <span class="word-recruitment">Recruitment</span>
                             <span class="word-velocity">Velocity</span>
                             <span class="word-os">OS</span>
@@ -47,9 +47,7 @@
                     <a href="#how-it-works" class="text-white hover:text-accent-1 transition-colors">How it Works</a>
                     
                     <a href="#tech-stack" class="text-white hover:text-accent-1 transition-colors">Tech Stack</a>
-                    <a href="#modules" class="text-white hover:text-accent-1 transition-colors">Modules</a>
                     <a href="#testimonials" class="text-white hover:text-accent-1 transition-colors">Testimonials</a>
-                    <a href="#" class="text-white hover:text-accent-1 transition-colors">Blog</a>
                 </div>
                 <!-- Mobile menu button -->
                 <button class="md:hidden mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -61,10 +59,8 @@
             <!-- Mobile menu -->
             <div id="mobileMenu" class="hidden md:hidden pb-4">
                 <a href="#how-it-works" class="block py-2 text-white hover:text-accent-1 transition-colors">How it Works</a>
-                <a href="#modules" class="block py-2 text-white hover:text-accent-1 transition-colors">Modules</a>
                 <a href="#tech-stack" class="block py-2 text-white hover:text-accent-1 transition-colors">Tech Stack</a>
                 <a href="#testimonials" class="block py-2 text-white hover:text-accent-1 transition-colors">Testimonials</a>
-                <a href="#" class="block py-2 text-white hover:text-accent-1 transition-colors">Blog</a>
             </div>
         </div>
     </header>
@@ -453,39 +449,6 @@
         </div>
     </section>
 
-    <!-- Interactive Modules Section -->
-    <section id="modules" class="modules py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Powerful Modules</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">JD Generator</h3>
-                    <p class="text-muted">AI-powered job description creation from client conversations</p>
-                </div>
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">AI Matching Engine</h3>
-                    <p class="text-muted">Smart candidate ranking based on skills and requirements</p>
-                </div>
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">Lead Capture</h3>
-                    <p class="text-muted">Multi-channel lead aggregation from all platforms</p>
-                </div>
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">Outreach Automation</h3>
-                    <p class="text-muted">Personalized candidate communication at scale</p>
-                </div>
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">Feedback Loop</h3>
-                    <p class="text-muted">Real-time client feedback integration</p>
-                </div>
-                <div class="module-card bg-secondary border border-primary/30 rounded-lg p-6 hover:border-accent-1 transition-all duration-300 hover:transform hover:scale-105 cursor-pointer">
-                    <h3 class="text-xl font-bold mb-3 text-accent-1">Analytics Dashboard</h3>
-                    <p class="text-muted">Comprehensive insights and performance metrics</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials py-20">
         <div class="container mx-auto px-6">
@@ -528,7 +491,7 @@
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
                         <img src="logo.png" alt="RVO Logo" class="h-8 w-auto">
-                        <span class="text-lg font-bold bg-gradient-to-r from-primary via-accent-1 to-accent-2 text-transparent bg-clip-text" style="font-family: 'Orbitron', monospace;">Recruitment Velocity OS</span>
+                        <span class="text-sm sm:text-lg font-bold bg-gradient-to-r from-primary via-accent-1 to-accent-2 text-transparent bg-clip-text whitespace-nowrap" style="font-family: 'Orbitron', monospace;">Recruitment Velocity OS</span>
                     </div>
                     <p class="text-muted text-sm">
                         Your AI-powered recruitment automation infrastructure.
@@ -540,20 +503,8 @@
                     <h3 class="text-lg font-bold mb-4 text-accent-1">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="#how-it-works" class="text-muted hover:text-white transition-colors text-sm">How it Works</a></li>
-                        <li><a href="#modules" class="text-muted hover:text-white transition-colors text-sm">Modules</a></li>
                         <li><a href="#testimonials" class="text-muted hover:text-white transition-colors text-sm">Testimonials</a></li>
                         <li><a href="#" class="text-muted hover:text-white transition-colors text-sm">Pricing</a></li>
-                    </ul>
-                </div>
-                
-                <!-- Resources -->
-                <div>
-                    <h3 class="text-lg font-bold mb-4 text-accent-1">Resources</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#" class="text-muted hover:text-white transition-colors text-sm">Documentation</a></li>
-                        <li><a href="#" class="text-muted hover:text-white transition-colors text-sm">API Reference</a></li>
-                        <li><a href="#" class="text-muted hover:text-white transition-colors text-sm">Blog</a></li>
-                        <li><a href="#" class="text-muted hover:text-white transition-colors text-sm">Support</a></li>
                     </ul>
                 </div>
                 
