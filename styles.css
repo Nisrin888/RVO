@@ -1110,4 +1110,51 @@ section:nth-child(even) {
   }
 }
 
+/* Footer layout optimization */
+footer .container {
+  max-width: 1200px;
+}
+
+footer .flex {
+  width: 100%;
+}
+
+/* Mobile footer styles */
+@media (max-width: 767px) {
+  footer .flex-1,
+  footer .flex-shrink-0 {
+    margin-bottom: 2rem;
+  }
+  
+  footer .flex-shrink-0:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Center align content on mobile */
+  footer .flex-1,
+  footer .flex-shrink-0 {
+    text-align: center;
+  }
+  
+  /* Ensure social icons stay centered on mobile */
+  footer .flex-shrink-0 .flex {
+    justify-content: center;
+  }
+}
+
+/* Desktop footer styles */
+@media (min-width: 768px) {
+  footer .flex-1 {
+    flex: 1 1 40%;
+  }
+  
+  footer .flex-shrink-0 {
+    flex: 1 1 30%;
+  }
+  
+  footer .flex-shrink-0:last-child {
+    flex: 1 1 30%;
+  }
+}
+
 
