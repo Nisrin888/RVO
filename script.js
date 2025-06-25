@@ -1,32 +1,5 @@
-// Initialize GSAP ScrollTrigger with performance optimizations
+// Initialize GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
-
-// Performance monitoring
-const perfObserver = new PerformanceObserver((list) => {
-    list.getEntries().forEach((entry) => {
-        if (entry.duration > 16) {
-            console.warn(`Long task detected: ${entry.name} took ${entry.duration}ms`);
-        }
-    });
-});
-
-try {
-    perfObserver.observe({ entryTypes: ['measure', 'navigation'] });
-} catch (e) {
-    // Performance Observer not supported
-}
-
-// Error handling
-window.addEventListener('error', (e) => {
-    console.error('JavaScript error:', e.error);
-});
-
-// Unhandled promise rejection handling
-window.addEventListener('unhandledrejection', (e) => {
-    console.error('Unhandled promise rejection:', e.reason);
-});
-
-
 
 // Mobile menu toggle
 function toggleMobileMenu() {
@@ -45,50 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Image Modal Functionality
-    const modal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const captionText = document.getElementById('caption');
-    const closeBtn = document.querySelector('.close-modal');
-    
-    // Get all workflow images
-    const workflowImages = document.querySelectorAll('.workflow-story-image');
-    
-    // Add click event to each workflow image
-    workflowImages.forEach(img => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            setTimeout(() => modal.classList.add('show'), 10);
-            modalImg.src = this.src;
-            captionText.innerHTML = this.alt;
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-        });
-    });
-    
-    // Close modal when clicking the X
-    closeBtn.addEventListener('click', closeModal);
-    
-    // Close modal when clicking outside the image
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-    
-    // Close modal with Escape key
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
-            closeModal();
-        }
-    });
-    
-    function closeModal() {
-        modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-            document.body.style.overflow = ''; // Restore scrolling
-        }, 300);
-    }
 });
 
 // Scroll to top function for logo click
@@ -164,7 +93,7 @@ gsap.from('.hero-section .cta-button', {
 // Workflow steps scroll animation
 const steps = document.querySelectorAll('.step-item');
 
-steps.forEach((step, index) => {
+steps.forEach((step) => {
     gsap.to(step, {
         scrollTrigger: {
             trigger: step,
@@ -180,27 +109,6 @@ steps.forEach((step, index) => {
                 });
             }
         }
-    });
-});
-
-// Module cards hover effect
-const moduleCards = document.querySelectorAll('.module-card');
-
-moduleCards.forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        gsap.to(this, {
-            y: -5,
-            duration: 0.3,
-            ease: 'power2.out'
-        });
-    });
-    
-    card.addEventListener('mouseleave', function() {
-        gsap.to(this, {
-            y: 0,
-            duration: 0.3,
-            ease: 'power2.out'
-        });
     });
 });
 
@@ -248,7 +156,7 @@ gsap.from('.why-rvo h3', {
 // Workflow Chart Animation
 const workflowSteps = document.querySelectorAll('.workflow-step');
 
-workflowSteps.forEach((step, index) => {
+workflowSteps.forEach((step) => {
     gsap.to(step, {
         scrollTrigger: {
             trigger: step,
@@ -256,7 +164,6 @@ workflowSteps.forEach((step, index) => {
             end: 'bottom 20%',
             toggleClass: 'visible',
             onEnter: () => {
-                // Animate the node with a slight delay
                 gsap.from(step.querySelector('.workflow-node'), {
                     scale: 0.8,
                     duration: 0.5,
@@ -302,42 +209,12 @@ window.addEventListener('scroll', () => {
 
 // Calendly integration
 function openCalendly() {
-    // You can replace this with actual Calendly widget integration
-    // For now, it opens in a new window
-    window.open('https://calendly.com/your-link', '_blank');
+    window.open('https://calendly.com/nischalpakhrin', '_blank');
 }
-
-// Co-pilot button functionality
-const coPilotBtn = document.querySelector('.co-pilot-btn');
-coPilotBtn.addEventListener('click', function() {
-    // Add chat functionality here
-    const message = 'Hi! I\'m your AI co-pilot. How can I help you automate your recruitment pipeline today?';
-    
-    // Create a simple chat popup
-    const chatPopup = document.createElement('div');
-    chatPopup.className = 'fixed bottom-20 right-6 bg-border rounded-lg p-4 shadow-lg max-w-sm z-50';
-    chatPopup.innerHTML = `
-        <div class="flex justify-between items-start mb-2">
-            <h3 class="text-accent-1 font-bold">RVO Assistant</h3>
-            <button onclick="this.parentElement.parentElement.remove()" class="text-muted hover:text-white">×</button>
-        </div>
-        <p class="text-sm mb-3">${message}</p>
-        <button onclick="openCalendly()" class="bg-primary hover:bg-accent-1 text-white text-sm px-4 py-2 rounded transition-all duration-300 w-full">
-            Schedule a Demo
-        </button>
-    `;
-    
-    // Remove any existing popup
-    const existingPopup = document.querySelector('.fixed.bottom-20.right-6');
-    if (existingPopup) existingPopup.remove();
-    
-    document.body.appendChild(chatPopup);
-});
 
 // Clean background animations
 const heroSection = document.querySelector('.hero-section');
 if (heroSection) {
-    // Add subtle gradient animation
     const style = document.createElement('style');
     style.textContent = `
         @keyframes gradientShift {
@@ -352,54 +229,6 @@ if (heroSection) {
     `;
     document.head.appendChild(style);
 }
-
-// Module click animations and interactions
-moduleCards.forEach((card, index) => {
-    card.addEventListener('click', function() {
-        const moduleName = this.querySelector('h3').textContent;
-        const moduleDesc = this.querySelector('p').textContent;
-        
-        gsap.to(this, {
-            scale: 0.95,
-            duration: 0.1,
-            yoyo: true,
-            repeat: 1,
-            ease: 'power2.inOut',
-            onComplete: () => {
-                // Create module detail popup
-                const popup = document.createElement('div');
-                popup.className = 'fixed inset-0 bg-secondary/90 backdrop-blur-md z-50 flex items-center justify-center p-6';
-                popup.innerHTML = `
-                    <div class="bg-border rounded-lg p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
-                        <div class="flex justify-between items-start mb-6">
-                            <h2 class="text-3xl font-bold text-accent-1">${moduleName}</h2>
-                            <button onclick="this.closest('.fixed').remove()" class="text-muted hover:text-white text-2xl">×</button>
-                        </div>
-                        <p class="text-lg mb-6">${moduleDesc}</p>
-                        <div class="space-y-4">
-                            <h3 class="text-xl font-bold text-primary">Key Features:</h3>
-                            <ul class="list-disc list-inside space-y-2 text-muted">
-                                <li>Advanced AI algorithms for optimal performance</li>
-                                <li>Real-time synchronization across all platforms</li>
-                                <li>Customizable workflows to match your process</li>
-                                <li>Detailed analytics and reporting</li>
-                            </ul>
-                            <button onclick="openCalendly()" class="mt-6 bg-primary hover:bg-accent-1 text-white px-6 py-3 rounded-lg transition-all duration-300">
-                                Learn More in a Demo
-                            </button>
-                        </div>
-                    </div>
-                `;
-                document.body.appendChild(popup);
-                
-                // Close on outside click
-                popup.addEventListener('click', (e) => {
-                    if (e.target === popup) popup.remove();
-                });
-            }
-        });
-    });
-});
 
 // Intersection Observer for fade-in animations
 const observerOptions = {

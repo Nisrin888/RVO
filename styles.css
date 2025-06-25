@@ -15,7 +15,10 @@
 }
 
 body {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: 'Domine', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
   background-color: var(--color-secondary);
   color: var(--color-text);
   overflow-x: hidden;
@@ -23,8 +26,10 @@ body {
 
 /* Headings font */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Domine', serif;
+  font-optical-sizing: auto;
   font-weight: 700;
+  font-style: normal;
   letter-spacing: -0.02em;
 }
 
@@ -81,16 +86,9 @@ header nav a:hover {
 
 /* Logo Text */
 .logo-text {
-  display: flex;
-  flex-direction: column;
+  display: inline;
+  white-space: nowrap;
   line-height: 1.1;
-}
-
-@media (min-width: 768px) {
-  .logo-text {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
 }
 
 .word-recruitment,
@@ -100,10 +98,13 @@ header nav a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline;
+  margin-right: 0.25rem;
 }
 
 .word-os {
   font-weight: 900;
+  margin-right: 0;
 }
 
 /* Logo text mobile optimization */
@@ -112,21 +113,6 @@ header nav a:hover {
   overflow: hidden;
 }
 
-.logo-text {
-  display: inline;
-  white-space: nowrap;
-}
-
-.word-recruitment,
-.word-velocity,
-.word-os {
-  display: inline;
-  margin-right: 0.25rem;
-}
-
-.word-os {
-  margin-right: 0;
-}
 
 /* Mobile specific logo styles */
 @media (max-width: 768px) {
@@ -168,13 +154,10 @@ header nav a:hover {
   pointer-events: none;
 }
 
-.particles-bg {
-  background: none;
-}
 
 /* Hero Title Animation */
 .hero-title {
-  font-family: 'Orbitron', monospace;
+  font-family: 'Domine', serif;
   font-weight: 900;
   color: #ffffff;
   position: relative;
@@ -204,38 +187,6 @@ header nav a:hover {
   to { width: 100%; }
 }
 
-/* Interactive hover effect for integration badges */
-.integration-badge {
-  background: rgba(30, 30, 30, 0.8);
-  border: 1px solid rgba(127, 0, 255, 0.3);
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.integration-badge::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: radial-gradient(circle, var(--color-accent-1) 0%, transparent 70%);
-  transition: all 0.5s ease;
-  transform: translate(-50%, -50%);
-}
-
-.integration-badge:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-accent-1);
-  box-shadow: 0 5px 20px rgba(0, 240, 255, 0.3);
-}
-
-.integration-badge:hover::before {
-  width: 100px;
-  height: 100px;
-}
-
 /* Enhanced CTA button with micro-interactions */
 .hero-cta {
   position: relative;
@@ -263,7 +214,7 @@ header nav a:hover {
 
 /* CTA Button */
 .cta-button {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Domine', serif;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -292,34 +243,10 @@ header nav a:hover {
   left: 100%;
 }
 
-/* Why RVO Section */
-.why-rvo {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, rgba(30, 30, 30, 0.5) 50%, var(--color-secondary) 100%);
-  width: 100%;
-  overflow-x: visible;
-}
-
-.why-rvo .grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 2rem;
-  width: 100%;
-  align-items: stretch; /* Ensure all cards have equal height */
-}
-
-@media (min-width: 768px) {
-  .why-rvo .grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 
 /* Prevent animation conflicts */
 .value-prop-card[style*="transform"] {
   position: relative !important;
-}
-
-.chaos-overlay {
-  display: none;
 }
 
 
@@ -363,8 +290,7 @@ header nav a:hover {
 }
 
 .value-prop-card:hover,
-.why-rvo .value-prop-card:hover,
-.why-rvo .grid > div:hover {
+.value-prop-card:hover {
   transform: translateY(-5px) !important;
   box-shadow: 0 15px 40px rgba(127, 0, 255, 0.3) !important;
   border-color: rgba(127, 0, 255, 0.7) !important;
@@ -398,19 +324,6 @@ header nav a:hover {
   box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
 }
 
-/* Module Cards */
-.module-card {
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.03) 100%);
-  will-change: transform, background;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-}
-
-.module-card:hover {
-  background: linear-gradient(135deg, rgba(127, 0, 255, 0.05) 0%, rgba(127, 0, 255, 0.1) 100%);
-}
 
 /* Testimonial Cards */
 .testimonial-card {
@@ -423,15 +336,6 @@ header nav a:hover {
   letter-spacing: 2px;
 }
 
-/* Co-pilot Button */
-.co-pilot-btn {
-  box-shadow: 0 2px 10px rgba(127, 0, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.co-pilot-btn:hover {
-  box-shadow: 0 4px 20px rgba(127, 0, 255, 0.5);
-}
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -463,36 +367,22 @@ header nav a:hover {
     font-size: 3rem;
   }
   
-  .module-card {
-    margin-bottom: 1rem;
-  }
   
   .container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
   
-  /* Fix uneven gaps between value proposition cards */
-  .why-rvo .grid {
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-  }
   
   .value-prop-card {
     margin: 0;
     width: 100%;
   }
   
-  /* Reduce spacing between tech stack and modules sections */
+  /* Reduce spacing between tech stack sections */
   .tool-integration {
     padding-top: 3rem !important;
     padding-bottom: 3rem !important;
-  }
-  
-  .modules {
-    padding-top: 3rem !important;
-    padding-bottom: 5rem !important;
   }
 }
 
@@ -510,12 +400,6 @@ header nav a:hover {
   will-change: transform;
 }
 
-/* Glass Effect */
-.glass-effect {
-  background: rgba(30, 30, 30, 0.7);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(127, 0, 255, 0.2);
-}
 
 /* Clean Sections Background */
 section {
@@ -527,118 +411,12 @@ section:nth-child(even) {
   background: linear-gradient(180deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.02) 50%, var(--color-secondary) 100%);
 }
 
-/* Modules Section Background */
-.modules {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, rgba(30, 30, 30, 0.8) 100%);
-}
 
 /* Final CTA Background Update */
 .final-cta {
   background: linear-gradient(135deg, rgba(127, 0, 255, 0.1) 0%, rgba(0, 240, 255, 0.1) 100%);
 }
 
-/* Workflow Complete Section - Zigzag Story Layout */
-.workflow-complete {
-  background: linear-gradient(180deg, var(--color-secondary) 0%, rgba(127, 0, 255, 0.02) 50%, var(--color-secondary) 100%);
-}
-
-.workflow-story {
-  position: relative;
-}
-
-.workflow-row {
-  position: relative;
-  overflow: visible;
-}
-
-/* Add subtle connection lines between sections */
-.workflow-row:not(:last-child)::after {
-  content: '';
-  position: absolute;
-  bottom: -3rem;
-  left: 50%;
-  width: 2px;
-  height: 3rem;
-  background: linear-gradient(180deg, var(--color-accent-1), transparent);
-  opacity: 0.3;
-}
-
-.workflow-image-container {
-  position: relative;
-  overflow: hidden;
-  border-radius: 1rem;
-}
-
-.workflow-story-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 1rem;
-  border: 2px solid rgba(127, 0, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-.workflow-image-container:hover .workflow-story-image {
-  border-color: var(--color-accent-1);
-  box-shadow: 0 20px 40px rgba(127, 0, 255, 0.3);
-  transform: scale(1.02);
-}
-
-.workflow-content {
-  padding: 2rem;
-}
-
-/* Add subtle animations on scroll */
-.workflow-left .workflow-image-container {
-  animation: slideInLeft 0.8s ease-out;
-}
-
-.workflow-right .workflow-image-container {
-  animation: slideInRight 0.8s ease-out;
-}
-
-@keyframes slideInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Mobile workflow adjustments */
-@media (max-width: 768px) {
-  .workflow-content {
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  .workflow-row {
-    margin-bottom: 3rem !important;
-  }
-  
-  .workflow-row::after {
-    display: none;
-  }
-  
-  .workflow-left .workflow-image-container,
-  .workflow-right .workflow-image-container {
-    animation: none;
-  }
-}
 
 /* Mobile Menu Button */
 .mobile-menu-btn svg path {
@@ -820,17 +598,16 @@ section:nth-child(even) {
 
 /* Workflow Chart Styles */
 .workflow-chart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  position: relative;
-  max-width: 500px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .workflow-step {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
   width: 100%;
   opacity: 0;
@@ -849,11 +626,15 @@ section:nth-child(even) {
   border-radius: 16px;
   padding: 2rem;
   width: 100%;
-  max-width: 400px;
+  height: 100%;
+  min-height: 280px;
   text-align: center;
   position: relative;
   transition: all 0.3s ease;
   backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .workflow-node:hover {
@@ -874,7 +655,7 @@ section:nth-child(even) {
   font-weight: 700;
   color: var(--color-text);
   margin-bottom: 0.5rem;
-  font-family: 'Orbitron', monospace;
+  font-family: 'Domine', serif;
 }
 
 .node-subtitle {
@@ -886,6 +667,7 @@ section:nth-child(even) {
 .node-details {
   border-top: 1px solid rgba(127, 0, 255, 0.2);
   padding-top: 1rem;
+  margin-top: auto;
 }
 
 .benefit {
@@ -906,6 +688,7 @@ section:nth-child(even) {
 .workflow-result {
   margin-top: 3rem;
   text-align: center;
+  grid-column: 1 / -1;
 }
 
 .result-banner {
@@ -963,16 +746,12 @@ section:nth-child(even) {
 @media (max-width: 768px) {
   .floating-logos-container {
     height: 500px;
+    padding: 0 10px;
   }
   
   .floating-logo img {
     width: 28px;
     height: 28px;
-  }
-  
-  /* Mobile grid layout - full width distribution */
-  .floating-logos-container {
-    padding: 0 10px;
   }
   
   .floating-logo-1 { top: 2%; left: 2%; }
@@ -1006,109 +785,6 @@ section:nth-child(even) {
   .floating-logo-25 { top: 67%; left: 38%; }
 }
 
-/* Image Modal Styles */
-.image-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(10px);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.image-modal.show {
-  display: block;
-  opacity: 1;
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 90%;
-  max-width: 1200px;
-  height: auto;
-  animation: zoomIn 0.5s ease;
-  border-radius: 8px;
-  box-shadow: 0 0 50px rgba(127, 0, 255, 0.5);
-}
-
-@keyframes zoomIn {
-  from {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-.close-modal {
-  position: absolute;
-  top: 40px;
-  right: 60px;
-  color: var(--color-accent-1);
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  cursor: pointer;
-  z-index: 1001;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-  color: var(--color-accent-2);
-  transform: scale(1.2);
-}
-
-.modal-caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-  text-align: center;
-  color: var(--color-text);
-  padding: 20px 0;
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-
-/* Make workflow images clickable */
-.workflow-story-image {
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.workflow-story-image:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 30px rgba(127, 0, 255, 0.4);
-}
-
-/* Mobile responsive modal */
-@media only screen and (max-width: 768px) {
-  .modal-content {
-    width: 100%;
-    padding: 0 10px;
-  }
-  
-  .close-modal {
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
-  }
-  
-  .modal-caption {
-    font-size: 1rem;
-    padding: 15px;
-  }
-}
 
 /* Footer layout optimization */
 footer .container {
@@ -1155,6 +831,102 @@ footer .flex {
   footer .flex-shrink-0:last-child {
     flex: 1 1 30%;
   }
+}
+
+/* Multi-Agent Framework Image Section */
+.multiagent-image-container {
+  animation: fadeInUp 1s ease-out;
+}
+
+.multiagent-image-container img {
+  transition: transform 0.3s ease;
+  border: 1px solid var(--color-accent-1);
+  box-shadow: 0 10px 40px rgba(0, 240, 255, 0.2);
+}
+
+.multiagent-image-container img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 15px 50px rgba(0, 240, 255, 0.3);
+}
+
+.benefit-card {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-border) 100%);
+  border-radius: 12px;
+  border: 1px solid var(--color-accent-1);
+  transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent-2);
+  box-shadow: 0 10px 25px rgba(127, 0, 255, 0.2);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Agent Cards */
+.agent-card {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-border) 100%);
+  border: 1px solid var(--color-accent-1);
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.agent-card:hover::before {
+  left: 100%;
+}
+
+.agent-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-accent-2);
+  box-shadow: 0 15px 35px rgba(127, 0, 255, 0.2);
+}
+
+.agent-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.agent-details {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.agent-details .benefit {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.agent-details .integrations {
+  opacity: 0.8;
 }
 
 
