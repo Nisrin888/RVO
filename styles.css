@@ -336,6 +336,29 @@ header nav a:hover {
   letter-spacing: 2px;
 }
 
+/* Pricing Section */
+.pricing-card {
+  transition: all 0.3s ease;
+  transform: translateY(0);
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(127, 0, 255, 0.2);
+}
+
+.pricing h2 svg {
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 
 /* Responsive */
 @media (max-width: 768px) {
